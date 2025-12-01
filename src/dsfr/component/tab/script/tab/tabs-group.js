@@ -136,8 +136,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   set isPreventingTransition (value) {
     if (this._isPreventingTransition === value) return;
-    if (value) this.addClass(api.internals.motion.TransitionSelector.NONE);
-    else this.removeClass(api.internals.motion.TransitionSelector.NONE);
+    if (value) this.style.transition = 'none';
+    else this.style.transition = null;
     this._isPreventingTransition = value === true;
   }
 
