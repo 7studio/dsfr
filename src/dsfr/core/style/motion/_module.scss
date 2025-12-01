@@ -4,7 +4,9 @@
 ////
 
 #{ns(transition)} {
-  &-none {
+  &-none,
+  &-none::before,
+  &-none::after {
     transition: none !important;
   }
 }
