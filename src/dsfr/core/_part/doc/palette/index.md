@@ -50,10 +50,10 @@ L’utilisation de la palette de couleurs est obligatoire pour l’ensemble des 
 
 La palette de couleur du Système de Design de l’État comprend deux parties : la palette “thème clair” et la palette “thème sombre”. Chacune de ces parties se décompose en catégories :
 
-- [couleurs primaires](#primaire)
-- [couleurs neutres (“neutral”)](#neutre)
-- [couleurs fonctionnelles](#systeme)
-- [couleurs illustratives](#accent)
+- [couleurs primaires](#couleurs-primaires)
+- [couleurs neutres (“neutral”)](#couleurs-neutres)
+- [couleurs système](#couleurs-systeme)
+- [couleurs illustratives](#couleurs-illustratives)
 
 ### Couleurs primaires
 
@@ -91,6 +91,8 @@ L’utilisation du thème sombre est notamment recommandé pour réduire la cons
 
 > [!NOTE]
 > Il n'est pas autorisé de mélanger les couleurs du thème clair et celles du thème sombre.
+
+## Sous-couche technique
 
 Les correspondances suivantes sont intégrées en code, en tant que sous-couche technique. Pour appliquer une couleur à un contexte, préférer l’utilisation des tokens de décision, qui intègrent la correspondance thème clair / thème sombre.
 
