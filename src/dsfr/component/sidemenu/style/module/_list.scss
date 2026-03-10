@@ -40,6 +40,10 @@
       }
     }
 
+    &:first-child:last-child {
+      @include before(none);
+    }
+
     & & & {
       @include before(none);
     }
