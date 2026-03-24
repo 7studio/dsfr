@@ -15,7 +15,7 @@
 
 * range.hint (string, optional) : texte de description sous le label
 
-* range.size (string, optional) : taille du curseur (valeur : 'sm')
+* range.size (string, optional) : taille du curseur (valeur : 'md')
 
 * range.inputAttributes (array, optional) : attributs de l'input
 
@@ -66,7 +66,7 @@ const rangeAttributes = {};
 if (range.prefix) rangeAttributes[`data-${prefix}-prefix`] = range.prefix;
 if (range.suffix) rangeAttributes[`data-${prefix}-suffix`] = range.suffix;
 const rangeClasses = [`${prefix}-range`];
-if (range.size) rangeClasses.push(`${prefix}-range--${range.size}`);
+if (range.size && range.size !== "md") rangeClasses.push(`${prefix}-range--${range.size}`);
 if (range.isDouble) rangeClasses.push(`${prefix}-range--double`);
 if (range.isStep) rangeClasses.push(`${prefix}-range--step`);
 
