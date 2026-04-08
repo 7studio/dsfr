@@ -59,6 +59,7 @@ const groupClasses = range.classes || [];
 groupClasses.push(`${prefix}-range-group`);
 
 const label = { label: range.label, hint: range.hint, attributes: { id: `${range.id}-label` } };
+if (!range.isDouble) label.for = range.id;
 
 const decorate = (value) => `${range.prefix ?? ''}${value}${range.suffix ?? ''}`;
 
@@ -74,7 +75,6 @@ const inputAttributes = range.inputAttributes || {};
 inputAttributes.id = range.id;
 inputAttributes.name = range.name;
 inputAttributes.type = 'range';
-inputAttributes['aria-labelledby'] = label.attributes.id;
 if (range.isDouble) {
   inputAttributes['aria-label'] = range.minValueLabel;
   inputAttributes['aria-labelledby'] = `${range.id} ${label.attributes.id}`;
