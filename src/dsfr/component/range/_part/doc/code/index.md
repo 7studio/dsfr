@@ -196,8 +196,8 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
-    <div class="fr-messages-group" id="range-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--valid" id="select-valid-message-valid">Texte de validation</p>
+    <div class="fr-messages-group" id="range-success-messages" aria-live="polite">
+        <p class="fr-message fr-message--valid" id="range-success-message-success">Texte de validation</p>
     </div>
 </div>
 ```
