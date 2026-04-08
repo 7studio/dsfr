@@ -241,8 +241,8 @@ Le curseur double permet de disposer de deux poignées de selection pour les val
     </label>
     <div class="fr-range fr-range--double">
         <span class="fr-range__output">25</span>
-        <input name="range-double" type="range" aria-labelledby="range-double-label" max="100" value="25" aria-describedby="range-double-messages">
-        <input name="range-double-2" type="range" aria-labelledby="range-double-label" max="100" value="75" aria-describedby="range-double-messages">
+        <input id="range-double" name="range-double" type="range" aria-label="Valeur minimale" aria-labelledby="range-double range-double-label" max="100" value="25" aria-describedby="range-double-messages">
+        <input id="range-double-2" name="range-double-2" type="range" aria-label="Valeur maximale" aria-labelledby="range-double-2 range-double-label" max="100" value="75" aria-describedby="range-double-messages">
         <span class="fr-range__min" aria-hidden="true">0</span>
         <span class="fr-range__max" aria-hidden="true">100</span>
     </div>
