@@ -15,7 +15,7 @@
 
 * range.hint (string, optional) : texte de description sous le label
 
-* range.size (string, optional) : taille du curseur (valeur : 'md')
+* range.size (string, optional) : taille du curseur (valeurs possibles : 'md' | 'sm')
 
 * range.inputAttributes (array, optional) : attributs de l'input
 
@@ -117,7 +117,7 @@ if (builder.describedby.length > 0) {
   <%- include('../../../form/template/ejs/label', { label : label }); %>
 
   <div <%- includeClasses(rangeClasses); %> <%- includeAttrs(rangeAttributes); %>>
-    <span class="<%= prefix %>-range__output"><%= decorate(range.value) %></span>
+    <span class="<%= prefix %>-range__output" aria-hidden="true"><%= decorate(range.value) %></span>
 
     <input <%- includeAttrs(inputAttributes); %> >
 
