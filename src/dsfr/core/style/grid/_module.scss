@@ -8,4 +8,4 @@
 @import 'module/container';
 
 // Génère les conteneurs, les colonnes et les écarts de colonnes
-@include grid($grid-settings);
+@include grid();

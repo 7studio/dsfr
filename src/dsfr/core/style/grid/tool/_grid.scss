@@ -5,7 +5,7 @@
 
 /// Génère les classes de colonne pour la grille ainsi que les offsets (optionnel)
 ///
-/// @param {Map} $columns [$grid-settings] - configuration de la grille
+/// @param {Map} $columns [null] - configuration de la grille
 /// @param {Bool} $with-container [true] - si true, définit les containers
 /// @param {Bool} $with-offsets [true] - si true, définit les offsets
 ///
@@ -13,9 +13,12 @@
 ///
 /// @example scss - Génère les colonnes
 ///   @include grid-generator();
-@mixin grid($settings: $grid-settings, $with-container: true, $with-offsets: true) {
+
+@use '../setting';
+
+@mixin grid($settings: setting.get(), $with-container: true, $with-offsets: true) {
   $columns: map-get($settings, columns);
-  $breakpoints-settings: map-get($grid-settings, breakpoints);
+  $breakpoints-settings: map-get($settings, breakpoints);
   $last-gutter: 0;
   $last-max-width: null;
   $containers: ();

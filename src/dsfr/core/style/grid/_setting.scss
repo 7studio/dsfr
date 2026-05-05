@@ -2,8 +2,11 @@
 /// Core Setting : Grid
 /// @group core
 ////
+@use 'sass:map';
 
-$grid-settings: (
+$grid-settings: null;
+
+$grid-settings-default: (
   columns: 12,
   breakpoints: (
     first: (
@@ -17,3 +20,24 @@ $grid-settings: (
     )
   )
 );
+
+@mixin set-breakpoints($v) {
+  $dsfr-breakpoints-v:  map.get($grid-settings-default, breakpoints);
+  $v: (breakpoints: map.deep-merge($v, $dsfr-breakpoints-v));
+
+  $grid-settings: map.deep-merge($grid-settings-default, $v) !global;
+}
+
+@function get($name: null) {
+  $settings: if($grid-settings == null, $grid-settings-default, $grid-settings);
+
+  @if $name == null {
+    @return $settings;
+  } @else {
+    @if map.has-key($settings, $name) == false {
+      @error 'Unknown property `#{$name}` into $grid-settings.';
+    }
+
+    @return map.get($settings, $name);
+  }
+}
