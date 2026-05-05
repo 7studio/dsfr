@@ -3,10 +3,31 @@
 /// @group media-query
 ////
 
-$values: (
+@use 'sass:map';
+@use 'sass:list';
+
+$defaults: (
   xs: 0 35.98em,
   sm: 36em 47.98em,
   md: 48em 61.98em,
   lg: 62em 77.98em,
   xl: 78em,
 );
+
+$values: null;
+
+@mixin set($v) {
+  // retire les points de rupture qui ne peuvent pas être surchargés
+  $v: map.remove($v, xs, sm, md, lg);
+
+  @if(map.has-key($v, xl)) {
+    $dsfr-xl-v: map.get($defaults, xl);
+    $xl-v: map.get($v, xl);
+    // vérifie que le point de rupture "xl" commence bien avec la valeur définie par le DSFR
+    @if(list.index($xl-v, $dsfr-xl-v) != 1) {
+     @error('xl breakpoint does not start with the correct value: #{$dsfr-xl-v} and cannot be overrided.');
+    }
+  }
+  
+  $values: map.deep-merge($defaults, $v) !global;
+};

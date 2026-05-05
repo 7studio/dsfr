@@ -1,0 +1,5 @@
+@use '../variable/breakpoints';
+
+@function breakpoints() {
+  @return if(breakpoints.$values == null, breakpoints.$defaults, breakpoints.$values);
+}

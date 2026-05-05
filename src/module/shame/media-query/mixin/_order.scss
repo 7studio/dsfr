@@ -1,8 +1,7 @@
-@use 'src/module/media-query/variable/breakpoints';
 @use 'src/module/media-query';
 
 @mixin order () {
-  @each $bp, $limits in breakpoints.$values {
+  @each $bp, $limits in media-query.breakpoints() {
     @if $bp != xs {
       @include media-query.respond-from($bp) {
         /*! media #{$bp} */

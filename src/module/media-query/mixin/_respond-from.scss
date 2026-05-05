@@ -1,4 +1,4 @@
-@use '../variable/breakpoints';
+@use '../function/breakpoints';
 
 /// Set media query styles
 ///
@@ -10,7 +10,7 @@
 ///     }
 ///   }
 @mixin respond-from($media) {
-  $limits: map_get(breakpoints.$values, $media);
+  $limits: map_get(breakpoints.breakpoints(), $media);
 
   @if $limits != null {
     @media (min-width: nth($limits, 1)) {
