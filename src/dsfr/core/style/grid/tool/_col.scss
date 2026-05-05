@@ -14,7 +14,10 @@
 ///   .foo {
 ///     @include grid-col(6);
 ///   }
-@mixin grid-col($size, $columns: 12) {
+
+@use '../setting';
+
+@mixin grid-col($size, $columns: setting.get(columns)) {
   $percent: #{100% * $size};
   $calc: 'calc(#{$percent} / #{$columns})';
   flex: 0 0 #{$calc};
@@ -33,7 +36,7 @@
 ///   .foo {
 ///     @include grid-col-offset(2);
 ///   }
-@mixin grid-col-offset($size, $columns: 12) {
+@mixin grid-col-offset($size, $columns: setting.get(columns)) {
   $percent: #{100% * $size};
   $calc: 'calc(#{$percent} / #{$columns})';
 
