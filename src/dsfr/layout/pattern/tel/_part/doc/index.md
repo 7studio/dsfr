@@ -29,7 +29,7 @@ Le champ téléphone est composé :
         <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
     </label>
     <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="assertive" id="tel-1-messages">
+    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
     </div>
 </div>
 </div>
@@ -41,7 +41,7 @@ Le champ téléphone est composé :
         <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
     </label>
     <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="assertive" id="tel-1-messages">
+    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
     </div>
 </div>
 ```
@@ -58,7 +58,7 @@ Le champ téléphone est composé :
         <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
     </label>
     <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="assertive" id="tel-1-messages">
+    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
         <p class="fr-message fr-message--error">Le format de numéro de téléphone saisie n’est pas valide. Le format attendu est : (+33) 5 36 49 68 27</p>
     </div>
 </div>
@@ -71,7 +71,7 @@ Le champ téléphone est composé :
         <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
     </label>
     <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="assertive" id="tel-1-messages">
+    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
         <p class="fr-message fr-message--error">Le format de numéro de téléphone saisie n’est pas valide. Le format attendu est : (+33) 5 36 49 68 27</p>
     </div>
 </div>
@@ -87,5 +87,5 @@ Le champ téléphone est composé :
 ## Accessibilité
 
 - Le label doit être lié à l’input via l’attribut `“for”`.
-- Les messages d’erreur ou de validation doivent être placés dans le bloc vide `fr-messages-group`. Celui-ci possède l’attribut `aria-live="assertive"` pour annoncer les messages ajoutés à la volée aux lecteurs d'écrans.
+- Les messages d’erreur ou de validation doivent être placés dans le bloc vide `fr-messages-group`. Celui-ci possède l’attribut `aria-live="polite"` pour annoncer les messages ajoutés à la volée aux lecteurs d'écrans.
 - L’input doit être lié au groupe de messages via l’attribut `aria-describedby`.
