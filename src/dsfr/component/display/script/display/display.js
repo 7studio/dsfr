@@ -9,15 +9,11 @@ class Display extends api.core.Instance {
   init () {
     this.radios = this.querySelectorAll(DisplaySelector.RADIO_BUTTONS);
 
-    if (api.scheme) {
-      if (!document.documentElement.hasAttribute(api.scheme.SchemeAttribute.SCHEME)) {
-        this.disableChoices();
-      } else {
-        this.changing = this.change.bind(this);
-        for (const radio of this.radios) radio.addEventListener('change', this.changing);
-        this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
-        this.ascend(api.scheme.SchemeEmission.ASK);
-      }
+    if (api.scheme && document.documentElement.hasAttribute(api.scheme.SchemeAttribute.SCHEME)) {
+      this.changing = this.change.bind(this);
+      for (const radio of this.radios) radio.addEventListener('change', this.changing);
+      this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
+      this.ascend(api.scheme.SchemeEmission.ASK);
     } else {
       this.disableChoices();
     }
