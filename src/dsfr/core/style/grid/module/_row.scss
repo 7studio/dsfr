@@ -4,10 +4,20 @@
 ////
 
 #{ns(grid-row)} {
-  @include disable-list-style;
   @include display-flex(null, null, null, wrap);
   @include margin(0);
   @include padding(0);
+  list-style-type: none;
+  counter-reset: none;
+
+  > {
+    #{class-start-with(ns(col-, ''))},
+    #{ns(col)} {
+      counter-increment: none;
+      @include marker(none);
+      @include padding(0);
+    }
+  }
 
   // Vertical alignment
   &--top {
