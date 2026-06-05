@@ -26,6 +26,7 @@ let attributes = checkbox.attributes || {};
 if (checkbox.checked === true) attributes.checked = "";
 if (checkbox.disabled === true) attributes.disabled = "";
 if (checkbox.name) attributes.name = checkbox.name;
+if (checkbox.indeterminate === true) checkbox.id += "-indeterminate";
 attributes.id = checkbox.id;
 attributes.type = "checkbox";
 const describedby = [];
