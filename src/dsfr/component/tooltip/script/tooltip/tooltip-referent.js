@@ -10,6 +10,7 @@ class TooltipReferent extends api.core.PlacementReferent {
   constructor () {
     super();
     this._state = 0;
+    this._isShownOnInteraction = null;
   }
 
   static get instanceClassName () {
@@ -29,12 +30,35 @@ class TooltipReferent extends api.core.PlacementReferent {
       this.placement.listen('mouseout', mouseout);
     }
     this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
+    this.listen('pointerdown', this._interactionStart.bind(this));
+    this.listen('mousedown', this._interactionStart.bind(this));
+    this.listen('touchstart', this._interactionStart.bind(this));
     this.listen('click', this._click.bind(this));
     this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
+    this.addEmission(api.core.RootEmission.INTERACTION, this._clickOut.bind(this)); // IOS
+  }
+
+  _interactionStart () {
+    this._isShownOnInteraction = this.state > 0;
   }
 
   _click () {
+    const isButtonTooltip = this.matches(TooltipSelector.BUTTON);
+
+    if (isButtonTooltip && (this._isShownOnInteraction === true || (this._isShownOnInteraction === null && this.state > 0))) {
+      this.close();
+      this._isShownOnInteraction = null;
+      return;
+    }
+
+    if (!isButtonTooltip) {
+      this.focusOut();
+      this._isShownOnInteraction = null;
+      return;
+    }
+
     this.focusIn();
+    this._isShownOnInteraction = null;
   }
 
   _clickOut (target) {
@@ -47,7 +71,16 @@ class TooltipReferent extends api.core.PlacementReferent {
       case api.core.KeyCodes.ESCAPE:
         this.close();
         break;
+
+      case api.core.KeyCodes.TAB:
+        this.request(this._tab.bind(this));
+        break;
     }
+  }
+
+  _tab () {
+    if (this.node.contains(document.activeElement) || this.placement.node.contains(document.activeElement)) return;
+    this.focusOut();
   }
 
   close () {
