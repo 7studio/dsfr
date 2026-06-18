@@ -38,8 +38,6 @@
 ul#{ns(grid-row)},
 ol#{ns(grid-row)} {
   list-style-type: none;
-  @include padding(0);
-  @include margin(0);
 
   & > li {
     @include padding-bottom(0);
