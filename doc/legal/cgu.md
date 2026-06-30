@@ -2,9 +2,9 @@
 cguVersion: '1.0.0'
 ---
 
-## MODALITÉS D’UTILISATION - Système de Design de l’État
+## Modalités d’utilisation du Système de Design de l’État
 
-**Version du 20 mai 2026 – version définitive**
+**20 mai 2026**
 
 Le Service d’information du Gouvernement (« SIG ») vous remercie de bien vouloir lire attentivement l’intégralité des présentes modalités d’utilisation avant d’accéder au Système de Design de l'État (« DSFR ») et à ses Ressources. Tout accès, toute utilisation et/ou toute Contribution au DSFR est subordonné au respect des présentes modalités. Tout utilisateur reconnaît avoir pris connaissance des présentes et s’engage à s’y conformer.
 
