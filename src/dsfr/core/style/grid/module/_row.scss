@@ -38,10 +38,10 @@
 ul#{ns(grid-row)},
 ol#{ns(grid-row)} {
   list-style-type: none;
-  @include padding(0);
-  @include margin(0);
+  counter-reset: none;
 
   & > li {
+    counter-increment: none;
     @include padding-bottom(0);
     @include marker(none);
   }
