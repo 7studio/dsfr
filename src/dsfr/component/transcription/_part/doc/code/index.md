@@ -52,7 +52,7 @@ Sa structure est la suivante :
         - Le bouton dispose d'un attribut `aria-label`, dont la valeur est "Agrandir la transcription".
         - Le bouton dispose d'un attribut `data-fr-opened`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
         - Le bouton est lié à la modale via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` de la modale.
-  - Le bloc refermable contient une modale, élément HTML `<div>` pour afficher le contenu en plein écran, définie par la classe `fr-modal`.
+  - Le bloc refermable contient une modale, élément HTML `<div>` définie par la classe `fr-modal`, pour afficher le contenu en plein écran.
     - Elle dispose d'un attribut `id` obligatoire, pour être lié au bouton d'ouverture.
     - la modale est lié à son titre via l'attribut `aria-labelledby`, dont la valeur doit correspondre à l'attribut `id` du titre.
     - Le contenu de la modale reprend la structure du composant [Modale](../../../../modal/_part/doc/index.md) et son contenu est libre, mais nécessite l'utilisation des balises adéquates, il n'est pas correcte de placer du texte directement dans une `<div>`.
