@@ -26,40 +26,60 @@ Voir les [conditions générales d'utilisation](doc/legal/cgu.md).
 
 ## Installation
 
-L'installation du Système de Design de l'État (ci-après, le DSFR) peut se faire en téléchargeant l'ensemble des fichiers nécessaires à son utilisation, ou en utilisant le gestionnaire de paquets NPM.
+### Installation via NPM
 
-### Fichiers statiques
+Le Système de Design de l'État (ci-après, le DSFR) est disponible sur NPM . Il peut être ajouté en dépendance à votre projet via un gestionnaire de packages compatible avec NPM (npm, yarn, pnpm, bun...). Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org/en/), et d'avoir un fichier `package.json` à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
 
-Il est possible de télécharger l'ensemble du DSFR au format zip ci-dessous. Le zip contient un ensemble de fichiers HTML, CSS et JavaScript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
+Une fois en place, vous pouvez installer le package `@gouvfr/dsfr` via la commande suivante :
 
-[Télécharger le DSFR au format zip sur Github](https://github.com/GouvernementFR/dsfr/releases)
-
-Vous trouverez sur la page Release sur Github, toutes les sources des versions précédentes et la dernière en date.
-
-### NPM
-
-Le DSFR est disponible sur NPM via un ensemble de packages qu'il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org/en/), et d'avoir un fichier `package.json` à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
-
-Une fois en place, il suffit d'installer le package @gouvfr/dsfr contenant l’ensemble des composants:
-
-```html
-npm install @gouvfr/dsfr
+```bash
+yarn create @gouvfr/dsfr
 ```
 
-Il est également possible d'installer le package avec [Yarn](https://yarnpkg.com/) :
+Par défaut la version du DSFR installée sera la dernière version stable (latest). Il est possible d'installer une version spécifique du DSFR en ajoutant le numéro de version en paramètre, par exemple :
 
-```html
-yarn add @gouvfr/dsfr
+```bash
+yarn create @gouvfr/dsfr --dsfr-version=1.15.0
 ```
 
-Une fois terminé le dsfr sera alors installé dans le dossier `node_modules/@gouvfr/dsfr/`.
+Avec npm, la commande équivalente est :
+
+```bash
+npm create @gouvfr/dsfr -- --dsfr-version=1.15.0
+```
+
+**Acceptation des conditions d'utilisation**
+
+La commande create vous demandera d'accepter les modalités d'utilisation du DSFR avant de procéder à l'installation. Il est nécessaire de lire et d'accepter ces conditions pour pouvoir installer la dépendance dans votre projet.
+
+Une fois acceptées, la dépendance est ajoutée au `package.json` et une installation des dépendances sera effectuée. Le DSFR sera alors installé dans le dossier `node_modules/@gouvfr/dsfr/`, ou à l'endroit spécifié par votre gestionnaire de packages.
+
+>[!NOTE]
+>Dans un contexte d'**intégration continue** (CI), il est possible d'utiliser la variable d'environnement `DSFR_ACCEPT_LICENSE` pour accepter les modalités d'utilisation sans interaction. La valeur de cette variable doit être `1` pour accepter les conditions d'utilisation. Par exemple, avec npm : `DSFR_ACCEPT_LICENSE=1 npm install @gouvfr/dsfr`.
+
+### Installation via Github
+
+Il est également possible de récupérer le projet DSFR directement depuis Github, et de l'installer localement. Pour cela, il suffit de cloner le projet avec la commande suivante :
+
+```bash
+git clone https://github.com/GouvernementFR/dsfr.git
+```
+
+Puis de se rendre dans le dossier du projet, consentir aux modalités d'utilisation, installer les dépendances, et compiler le projet avec les commandes suivantes :
+
+```bash
+cd dsfr
+yarn create @gouvfr/dsfr
+yarn install
+yarn build
+```
 
 ## Pages d'exemples
 
 Pour visualiser les exemples, il est nécessaire de lancer un serveur local. Pour cela, installer le package browser-sync, puis lancer le serveur dans le dossier du dsfr :
 
 ```html
-npm install browser-sync
+npm install -G browser-sync
 cd node_modules/@gouvfr/dsfr/
 npm run serve
 ```
@@ -68,12 +88,12 @@ Une fois le serveur lancé, les exemples sont disponibles à l'adresse http://lo
 
 ## Structure du DSFR
 
-> [!NOTE]
-> La structure que nous mettons à disposition sur github ou npm est la suivante :
->
-> - **dist** : contient les fichiers css et js à importer en fonction des packages utilisés
-> - **src** : contient les sources sass et js des différents composants
-> - **example** : contient des snippets html d'exemple des composants et modèles de pages que vous pouvez consulter en local
+La structure du projet est la suivante :
+
+- **dist** : contient les fichiers css et js compilés à importer dans votre projet
+- **src** : contient les sources sass et js des différents composants
+- **example** : contient des snippets html d'exemple des composants et modèles de pages que vous pouvez consulter en local
+- **standalone** : contient des éléments utilisables de manière autonome, sans utilisation du DSFR
 
 ## Configuration de votre projet
 
