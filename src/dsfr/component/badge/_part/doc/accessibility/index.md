@@ -22,7 +22,7 @@ Le badge est un élément d’indication permettant de valoriser une information
 
 - [Présentation](../index.md)
 - [Démo](../demo/index.md)
-- [Anatomie](../design/index.md)
+- [Design](../design/index.md)
 - [Code](../code/index.md)
 - Accessibilité
 
