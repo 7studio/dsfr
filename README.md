@@ -33,7 +33,7 @@ Le Système de Design de l'État (ci-après, le DSFR) est disponible sur NPM .
 Une fois en place, vous pouvez installer le package `@gouvfr/dsfr` via la commande suivante :
 
 ```bash
-yarn create @gouvfr/dsfr
+yarn create @gouvfr/dsfr@latest
 ```
 
 Par défaut la version du DSFR installée sera la dernière version stable (latest). Il est possible d'installer une version spécifique du DSFR en ajoutant le numéro de version en paramètre, par exemple :
@@ -69,7 +69,7 @@ Puis de se rendre dans le dossier du projet, consentir aux modalités d'utilisat
 
 ```bash
 cd dsfr
-yarn create @gouvfr/dsfr
+yarn create @gouvfr/dsfr@latest
 yarn install
 yarn build
 ```
