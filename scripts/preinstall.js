@@ -5,7 +5,7 @@ const log = require('../tool/utilities/log');
 const CONSENT_FILE_NAME = '.dsfr.yml';
 const ACCEPT_LICENSE_KEY = 'accept-license';
 const ACCEPT_LICENSE_ENV = 'DSFR_ACCEPT_LICENSE';
-const CREATE_DSFR_PACKAGE = '@gouvfr/dsfr';
+const CREATE_DSFR_PACKAGE = '@gouvfr/dsfr@latest';
 const CREATE_DSFR_COMMANDS = {
   npm: `npm create ${CREATE_DSFR_PACKAGE}`,
   pnpm: `pnpm create ${CREATE_DSFR_PACKAGE}`,
